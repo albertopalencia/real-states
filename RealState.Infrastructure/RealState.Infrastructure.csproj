@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>netcoreapp3.1</TargetFramework>
+    <ProjectGuid>{173e2dc0-014e-4e14-8b5d-3404c48d757b}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interfaces\IMunicipioRepository.cs" />
+    <Compile Remove="Repositories\ConsultaPorRequerimientoRepository.cs" />
+    <Compile Remove="Repositories\LeccionesAprendidasDapperRepository.cs" />
+    <Compile Remove="Repositories\LeccionesVinculadasDapperRepository.cs" />
+    <Compile Remove="Repositories\MunicipioRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+
+	  <PackageReference Include="Dapper" Version="2.0.35" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RealState.Domain\RealState.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
