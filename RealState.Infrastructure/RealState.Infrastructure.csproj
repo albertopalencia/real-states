@@ -7,10 +7,10 @@
 
   <ItemGroup>
     <Compile Remove="Interfaces\IMunicipioRepository.cs" />
-    <Compile Remove="Repositories\ConsultaPorRequerimientoRepository.cs" />
-    <Compile Remove="Repositories\LeccionesAprendidasDapperRepository.cs" />
-    <Compile Remove="Repositories\LeccionesVinculadasDapperRepository.cs" />
-    <Compile Remove="Repositories\MunicipioRepository.cs" />
+    <Compile Remove="Repository\ConsultaPorRequerimientoRepository.cs" />
+    <Compile Remove="Repository\LeccionesAprendidasDapperRepository.cs" />
+    <Compile Remove="Repository\LeccionesVinculadasDapperRepository.cs" />
+    <Compile Remove="Repository\MunicipioRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,27 +16,23 @@ namespace RealState.Infrastructure.Options
 {
 	using System.Diagnostics.CodeAnalysis;
 
-
 	/// <summary>
 	/// Class ContrasenaOpcion.
 	/// </summary>
 	[ExcludeFromCodeCoverage]
 	public class ContrasenaOpcion
 	{
-
 		/// <summary>
 		/// Gets or sets the size of the salt.
 		/// </summary>
 		/// <value>The size of the salt.</value>
 		public int SaltSize { get; set; }
 
-
 		/// <summary>
 		/// Gets or sets the size of the key.
 		/// </summary>
 		/// <value>The size of the key.</value>
 		public int KeySize { get; set; }
-
 
 		/// <summary>
 		/// Gets or sets the iterations.

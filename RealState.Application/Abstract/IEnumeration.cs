@@ -1,8 +1,7 @@
-﻿ 
-namespace RealState.Application.Abstract
+﻿namespace RealState.Application.Abstract
 {
 	using System;
- 
+
 	public interface IEnumeration : IComparable
 	{
 	}

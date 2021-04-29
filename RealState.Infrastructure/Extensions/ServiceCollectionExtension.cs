@@ -1,14 +1,15 @@
-﻿namespace RealState.Infrastructure.Extensions
+﻿using RealState.Infrastructure.DataAccess;
+using RealState.Infrastructure.Interfaces.Repository;
+using RealState.Infrastructure.Repository;
+
+namespace RealState.Infrastructure.Extensions
 {
-	using DataAccessEntityFrameWork;
 	using Domain.Enumerations;
-	using Interfaces;
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.Extensions.Configuration;
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.OpenApi.Models;
 	using Options;
-	using Repositories;
 	using System;
 	using System.Diagnostics.CodeAnalysis;
 	using System.IO;
@@ -19,7 +20,7 @@
 		public static IServiceCollection AddDbContexts(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddDbContext<RealStateContext>(options =>
-			 options.UseSqlServer(configuration[CadenaConexionDomainEnum.RealState.Name],
+			 options.UseSqlServer(configuration[ConnectionDomainEnum.RealState.Name],
 			   sqlOptions =>
 			   {
 				   sqlOptions.EnableRetryOnFailure(
@@ -41,8 +42,10 @@
 
 		public static IServiceCollection AddServices(this IServiceCollection services)
 		{
-			services.AddScoped(typeof(IDapperRepository<>), typeof(DapperRepository<>));
-			services.AddScoped<IUnitOfWork, UnitOfWork>();
+			services.AddTransient<IUserRepository, UserRepository>();
+			services.AddTransient<IPropertyRepository, PropertyRepository>();
+			services.AddTransient<IOwnerRepository, OwnerRepository>();
+			services.AddTransient<IOwnerRepository, OwnerRepository>();
 			return services;
 		}
 

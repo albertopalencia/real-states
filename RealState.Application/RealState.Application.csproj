@@ -18,9 +18,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Abstract\General\" />
-    <Folder Include="Abstract\Permiso\" />
-    <Folder Include="Abstract\Rol\" />
     <Folder Include="DTO\Rol\" />
   </ItemGroup>
 

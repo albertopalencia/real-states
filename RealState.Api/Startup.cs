@@ -4,22 +4,20 @@
 // Created          : 04-27-2021
 //
 // Last Modified By : Alberto Palencia
-// Last Modified On : 04-27-2021
+// Last Modified On : 04-28-2021
 // ***********************************************************************
 // <copyright file="Startup.cs" company="RealState.Api">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using RealState.Application.Abstract.User;
+using RealState.Application.Implements.User;
 
 namespace RealState.Api
 {
 	using Application.Abstract.General;
-	using Application.Abstract.Rol;
-	using Application.Abstract.Usuario;
 	using Application.Implements.General;
-	using Application.Implements.Rol;
-	using Application.Implements.Usuario;
 	using Filters;
 	using FluentValidation.AspNetCore;
 	using Infrastructure.Extensions;
@@ -172,9 +170,8 @@ namespace RealState.Api
 		/// <returns>IServiceCollection.</returns>
 		public void AddApplicationService(IServiceCollection services)
 		{
-			services.AddTransient<IUsuarioService, UsuarioService>();
-			services.AddTransient<IRolService, RolService>();
-			services.AddSingleton<IContrasenaService, ContrasenaService>();
+			services.AddTransient<IUserService, UserService>();
+			services.AddSingleton<IPasswordService, PasswordService>();
 		}
 
 		/// <summary>

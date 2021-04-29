@@ -17,14 +17,12 @@ namespace RealState.Api
 	using Microsoft.Extensions.Hosting;
 	using System.Diagnostics.CodeAnalysis;
 
-
 	/// <summary>
 	/// Class Program.
 	/// </summary>
 	[ExcludeFromCodeCoverage]
 	public static class Program
 	{
-
 		public static void Main(string[] args)
 		{
 			CreateHostBuilder(args).Build().Run();

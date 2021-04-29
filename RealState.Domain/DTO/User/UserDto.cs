@@ -1,37 +1,37 @@
 ﻿// ***********************************************************************
-// Assembly         : RealState.Infrastructure
+// Assembly         :
 // Author           : Alberto Palencia
 // Created          : 04-27-2021
 //
 // Last Modified By : Alberto Palencia
 // Last Modified On : 04-28-2021
 // ***********************************************************************
-// <copyright file="IRemoveRepository.cs" company="RealState.Infrastructure">
+// <copyright file="UserDto.cs" company="AlbertPalencia">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
 
-namespace RealState.Infrastructure.Interfaces
-{
-	using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
+namespace RealState.Domain.DTO.User
+{
 	/// <summary>
-	/// Interface IRemoveRepository
+	/// Class UserDto.
 	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	public interface IRemoveRepository<in T> where T : class
+	[ExcludeFromCodeCoverage]
+	public class UserDto
 	{
 		/// <summary>
-		/// Removes the specified t.
+		/// Gets or sets the name of the user.
 		/// </summary>
-		/// <param name="t">The t.</param>
-		void Remove(T t);
+		/// <value>The name of the user.</value>
+		public string UserName { get; set; }
 
 		/// <summary>
-		/// Removes the specified t.
+		/// Gets or sets the password.
 		/// </summary>
-		/// <param name="t">The t.</param>
-		void Remove(IEnumerable<T> t);
+		/// <value>The password.</value>
+		public string Password { get; set; }
 	}
 }

@@ -19,7 +19,6 @@ namespace RealState.Api.Filters
 	using System.Diagnostics.CodeAnalysis;
 	using System.Net;
 
-
 	/// <summary>
 	/// Class GlobalExceptionFilter.
 	/// Implements the <see cref="Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter" />
@@ -28,15 +27,12 @@ namespace RealState.Api.Filters
 	[ExcludeFromCodeCoverage]
 	public class GlobalExceptionFilter : IExceptionFilter
 	{
-
-
 		/// <summary>
 		/// Called after an action has thrown an <see cref="T:System.Exception" />.
 		/// </summary>
 		/// <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ExceptionContext" />.</param>
 		public void OnException(ExceptionContext context)
 		{
-
 			var exception = context.Exception;
 			var validation = new
 			{
@@ -54,6 +50,5 @@ namespace RealState.Api.Filters
 			context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
 			context.ExceptionHandled = true;
 		}
-
 	}
 }

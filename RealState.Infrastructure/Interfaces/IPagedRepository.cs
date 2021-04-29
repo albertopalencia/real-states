@@ -14,7 +14,7 @@
 namespace RealState.Infrastructure.Interfaces
 {
 	using Microsoft.EntityFrameworkCore.Query;
-	using  Pages;
+	using Pages;
 	using System;
 	using System.Linq;
 	using System.Linq.Expressions;

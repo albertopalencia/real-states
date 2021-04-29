@@ -19,7 +19,6 @@ namespace RealState.Domain.Enumerations
 	using System.Linq;
 	using System.Reflection;
 
-
 	/// <summary>
 	/// Class EnumerationDomain.
 	/// Implements the <see cref="RealState.Domain.Enumerations.IEnumerationDomain" />
@@ -28,13 +27,11 @@ namespace RealState.Domain.Enumerations
 	[ExcludeFromCodeCoverage]
 	public abstract class EnumerationDomain : IEnumerationDomain
 	{
-
 		/// <summary>
 		/// Gets the name.
 		/// </summary>
 		/// <value>The name.</value>
 		public string Name { get; private set; }
-
 
 		/// <summary>
 		/// Gets the identifier.
@@ -42,14 +39,12 @@ namespace RealState.Domain.Enumerations
 		/// <value>The identifier.</value>
 		public int Id { get; private set; }
 
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EnumerationDomain"/> class.
 		/// </summary>
 		protected EnumerationDomain()
 		{
 		}
-
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EnumerationDomain"/> class.
@@ -61,13 +56,11 @@ namespace RealState.Domain.Enumerations
 			Id = id; Name = name;
 		}
 
-
 		/// <summary>
 		/// Returns a <see cref="System.String" /> that represents this instance.
 		/// </summary>
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString() => Name;
-
 
 		/// <summary>
 		/// Gets all.
@@ -79,7 +72,6 @@ namespace RealState.Domain.Enumerations
 			var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
 			return fields.Select(f => f.GetValue(null)).Cast<T>();
 		}
-
 
 		/// <summary>
 		/// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
@@ -94,13 +86,11 @@ namespace RealState.Domain.Enumerations
 			return typeMatches && valueMatches;
 		}
 
-
 		/// <summary>
 		/// Returns a hash code for this instance.
 		/// </summary>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
 		public override int GetHashCode() => Id.GetHashCode();
-
 
 		/// <summary>
 		/// Absolutes the difference.
@@ -114,7 +104,6 @@ namespace RealState.Domain.Enumerations
 			return absoluteDifference;
 		}
 
-
 		/// <summary>
 		/// Froms the value.
 		/// </summary>
@@ -127,7 +116,6 @@ namespace RealState.Domain.Enumerations
 			return matchingItem;
 		}
 
-
 		/// <summary>
 		/// Froms the display name.
 		/// </summary>
@@ -139,7 +127,6 @@ namespace RealState.Domain.Enumerations
 			var matchingItem = Parse<T, string>(displayName, "display name", item => item.Name == displayName);
 			return matchingItem;
 		}
-
 
 		/// <summary>
 		/// Parses the specified value.
@@ -157,7 +144,6 @@ namespace RealState.Domain.Enumerations
 			if (matchingItem == null) throw new InvalidOperationException($"'{value}' is not a valid {description} in {typeof(T)}");
 			return matchingItem;
 		}
-
 
 		/// <summary>
 		/// Compares to.

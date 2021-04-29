@@ -26,8 +26,6 @@ namespace RealState.Api.Filters
 	[ExcludeFromCodeCoverage]
 	public class ValidatorActionFilter : IActionFilter
 	{
-
-
 		/// <summary>
 		/// Called before the action executes, after model binding is complete.
 		/// </summary>
@@ -39,8 +37,6 @@ namespace RealState.Api.Filters
 				context.Result = new BadRequestObjectResult(context.ModelState);
 			}
 		}
-
-
 
 		/// <summary>
 		/// Called when [action executed].
