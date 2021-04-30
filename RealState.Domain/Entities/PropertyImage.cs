@@ -30,7 +30,7 @@ namespace RealState.Domain.Entities
 		/// Gets or sets the file.
 		/// </summary>
 		/// <value>The file.</value>
-		public byte[] File { get; set; }
+		public string File { get; set; }
 
 		/// <summary>
 		/// Gets or sets a value indicating whether this <see cref="PropertyImage"/> is enabled.
