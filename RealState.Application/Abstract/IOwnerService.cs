@@ -1,32 +1,32 @@
 ﻿// ***********************************************************************
-// Assembly         :
+// Assembly         : RealState.Application
 // Author           : Alberto Palencia
-// Created          : 04-27-2021
+// Created          : 05-02-2021
 //
 // Last Modified By : Alberto Palencia
-// Last Modified On : 04-28-2021
+// Last Modified On : 05-02-2021
 // ***********************************************************************
-// <copyright file="IUserService.cs" company="AlbertPalencia">
+// <copyright file="IOwnerService.cs" company="RealState.Application">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
 
-using RealState.Domain.DTO.User;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using RealState.Application.DTO.Owner;
 
-namespace RealState.Application.Abstract.User
+namespace RealState.Application.Abstract
 {
 	/// <summary>
-	/// Interface IUserService
+	/// Interface IOwnerService
 	/// </summary>
-	public interface IUserService
+	public interface IOwnerService
 	{
 		/// <summary>
-		/// Validates the user.
+		/// Gets all owner.
 		/// </summary>
-		/// <param name="user">The user.</param>
-		/// <returns>Task&lt;Domain.Entities.User&gt;.</returns>
-		Task<Domain.Entities.User> ValidateUser(UserDto user);
+		/// <returns>Task&lt;IEnumerable&lt;OwnerList&gt;&gt;.</returns>
+		Task<IEnumerable<OwnerList>> GetAllOwner();
 	}
 }

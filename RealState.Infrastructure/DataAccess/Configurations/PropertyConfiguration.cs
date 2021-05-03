@@ -20,11 +20,7 @@ using RealState.Domain.Entities;
 namespace RealState.Infrastructure.DataAccess.Configurations
 {
 
-	/// <summary>
-	/// Class PropertyConfiguration.
-	/// Implements the <see cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{RealState.Domain.Entities.Property}" />
-	/// </summary>
-	/// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{RealState.Domain.Entities.Property}" />
+	
 	public class PropertyConfiguration : IEntityTypeConfiguration<Property>
 	{
 
@@ -34,7 +30,7 @@ namespace RealState.Infrastructure.DataAccess.Configurations
 		/// <param name="builder">The builder to be used to configure the entity type.</param>
 		public void Configure(EntityTypeBuilder<Property> builder)
 		{
-			builder.ToTable("Property");
+		 
 
 			builder.Property(e => e.Id)
 				.HasColumnName("IdProperty");
@@ -47,11 +43,7 @@ namespace RealState.Infrastructure.DataAccess.Configurations
 			builder.Property(e => e.Address)
 				.IsRequired()
 				.HasMaxLength(150)
-				.IsUnicode(false);
-
-
-			builder.Property(e => e.Price)
-				.IsRequired();
+				.IsUnicode(false); 
 
 			builder.Property(e => e.CodeInternal)
 				.HasMaxLength(50);
@@ -60,6 +52,17 @@ namespace RealState.Infrastructure.DataAccess.Configurations
 			builder.Property(e => e.Year);
 
 			builder.Property(e => e.IdOwner);
+			
+
+			builder.Property(e => e.Price).HasColumnType("numeric(18, 2)");
+
+			builder.HasOne(d => d.IdOwnerNavigation)
+					.WithMany(p => p.Property)
+					.HasForeignKey(d => d.IdOwner)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_Property_IdOwner");
+		 
+
 
 		}
 	}

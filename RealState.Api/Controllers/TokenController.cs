@@ -16,7 +16,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using RealState.Application.Abstract.User;
 using RealState.Application.Enumerations;
 using RealState.Domain.DTO.User;
 using System;
@@ -25,6 +24,7 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using RealState.Application.Abstract;
 using RealState.Domain.Entities;
 
 namespace RealState.Api.Controllers

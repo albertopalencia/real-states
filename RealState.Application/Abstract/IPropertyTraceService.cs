@@ -1,26 +1,22 @@
 ﻿// ***********************************************************************
-// Assembly         : RealState.Infrastructure
+// Assembly         : RealState.Application
 // Author           : Alberto Palencia
-// Created          : 04-28-2021
+// Created          : 05-02-2021
 //
 // Last Modified By : Alberto Palencia
-// Last Modified On : 04-28-2021
+// Last Modified On : 05-02-2021
 // ***********************************************************************
-// <copyright file="IPropertyRepository.cs" company="RealState.Infrastructure">
+// <copyright file="IPropertyTraceService.cs" company="RealState.Application">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-using RealState.Domain.Entities;
-using RealState.Infrastructure.Interfaces.Generic;
-
-namespace RealState.Infrastructure.Interfaces.Repository
+namespace RealState.Application.Abstract
 {
 	/// <summary>
-	/// Interface IPropertyRepository
+	/// Interface IPropertyTraceService
 	/// </summary>
-	public interface IPropertyRepository : IReadRepository<Property>
+	public interface IPropertyTraceService
 	{
 		
 	}

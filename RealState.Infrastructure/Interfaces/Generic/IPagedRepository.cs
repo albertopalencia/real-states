@@ -11,15 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace RealState.Infrastructure.Interfaces
-{
-	using Microsoft.EntityFrameworkCore.Query;
-	using Pages;
-	using System;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Threading.Tasks;
 
+using System;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Query;
+using RealState.Infrastructure.Pages;
+
+namespace RealState.Infrastructure.Interfaces.Generic
+{
 	/// <summary>
 	/// Interface IPagedRepository
 	/// </summary>

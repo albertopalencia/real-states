@@ -6,46 +6,32 @@
 // Last Modified By : Alberto Palencia
 // Last Modified On : 04-18-2021
 // ***********************************************************************
-// <copyright file="ICreateRepository.cs" company="RealState.Infrastructure">
+// <copyright file="IUpdateRepository.cs" company="RealState.Infrastructure">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace RealState.Infrastructure.Interfaces
-{
-	using System.Collections.Generic;
-	using System.Threading.Tasks;
 
+using System.Collections.Generic;
+
+namespace RealState.Infrastructure.Interfaces.Generic
+{
 	/// <summary>
-	/// Interface ICreateRepository
+	/// Interface IUpdateRepository
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public interface ICreateRepository<in T> where T : class
+	public interface IUpdateRepository<in T> where T : class
 	{
 		/// <summary>
-		/// Adds the specified t.
+		/// Updates the specified t.
 		/// </summary>
 		/// <param name="t">The t.</param>
-		void Add(T t);
+		void Update(T t);
 
 		/// <summary>
-		/// Adds the specified t.
+		/// Updates the specified t.
 		/// </summary>
 		/// <param name="t">The t.</param>
-		void Add(IEnumerable<T> t);
-
-		/// <summary>
-		/// Adds the asynchronous.
-		/// </summary>
-		/// <param name="t">The t.</param>
-		/// <returns>Task.</returns>
-		Task AddAsync(T t);
-
-		/// <summary>
-		/// Adds the asynchronous.
-		/// </summary>
-		/// <param name="t">The t.</param>
-		/// <returns>Task.</returns>
-		Task AddAsync(IEnumerable<T> t);
+		void Update(IEnumerable<T> t);
 	}
 }

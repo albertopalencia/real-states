@@ -12,20 +12,20 @@
 // <summary></summary>
 // ***********************************************************************
 
-using RealState.Application.Abstract.General;
-using RealState.Application.Abstract.User;
-using RealState.Domain.DTO.User;
-using RealState.Infrastructure.Interfaces.Repository;
 using System;
 using System.Threading.Tasks;
+using RealState.Application.Abstract;
+using RealState.Application.Abstract.General;
+using RealState.Domain.DTO.User;
+using RealState.Infrastructure.Interfaces.Repository;
 
-namespace RealState.Application.Implements.User
+namespace RealState.Application.Implements
 {
 	/// <summary>
 	/// Class UserService.
-	/// Implements the <see cref="RealState.Application.Abstract.User.IUserService" />
+	/// Implements the <see cref="IUserService" />
 	/// </summary>
-	/// <seealso cref="RealState.Application.Abstract.User.IUserService" />
+	/// <seealso cref="IUserService" />
 	public class UserService : IUserService
 	{
 		/// <summary>

@@ -32,7 +32,6 @@ namespace RealState.Infrastructure.Repository
 		/// <param name="context">The context.</param>
 		public PropertyRepository(RealStateContext context) : base(context)
 		{
-			
 		}
 	}
 }

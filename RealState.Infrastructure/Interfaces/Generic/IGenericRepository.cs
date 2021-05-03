@@ -1,11 +1,11 @@
-﻿namespace RealState.Infrastructure.Interfaces
-{
-	using RealState.Domain.Entities;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using RealState.Domain.Entities;
 
+namespace RealState.Infrastructure.Interfaces.Generic
+{
 	public interface IGenericRepository<T> where T : BaseEntity
 	{
 		T Find(int id);

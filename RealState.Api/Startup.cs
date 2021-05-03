@@ -11,8 +11,12 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using RealState.Application.Abstract.User;
-using RealState.Application.Implements.User;
+
+using System.Linq;
+using Microsoft.AspNetCore.ResponseCompression;
+using RealState.Application.Abstract;
+using RealState.Application.Implements;
+using RealState.Domain.Entities;
 
 namespace RealState.Api
 {
@@ -108,6 +112,16 @@ namespace RealState.Api
 					.AllowAnyHeader();
 			}));
 
+			services.AddResponseCompression(c =>
+			{
+				c.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+				{
+					"image/svg+xml"
+				});
+
+			});
+
+
 			services.AddResponseCaching();
 		}
 
@@ -141,13 +155,15 @@ namespace RealState.Api
 
 			app.UseResponseCaching();
 
+			app.UseResponseCompression();
+
 			app.Use(async (context, next) =>
 			{
 				context.Response.GetTypedHeaders().CacheControl =
 					new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
 					{
 						Public = true,
-						MaxAge = TimeSpan.FromSeconds(20)
+						MaxAge = TimeSpan.FromSeconds(5)
 					};
 				context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
 					new string[] { "Accept-Encoding" };
@@ -172,6 +188,10 @@ namespace RealState.Api
 		{
 			services.AddTransient<IUserService, UserService>();
 			services.AddSingleton<IPasswordService, PasswordService>();
+			services.AddScoped<IPropertyImageService, PropertyImageService>();
+			services.AddScoped<IPropertyService, PropertyService>();
+			services.AddScoped<IPropertyTraceService, PropertyTraceService>();
+			services.AddScoped<IOwnerService, OwnerService>();
 		}
 
 		/// <summary>
