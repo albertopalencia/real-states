@@ -11,9 +11,12 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using RealState.Domain.Entities;
 using RealState.Infrastructure.DataAccess;
 using RealState.Infrastructure.Interfaces.Repository;
+using RealState.Infrastructure.Pages;
+using System.Threading.Tasks;
 
 namespace RealState.Infrastructure.Repository
 {
@@ -33,5 +36,7 @@ namespace RealState.Infrastructure.Repository
 		public PropertyRepository(RealStateContext context) : base(context)
 		{
 		}
+		 
+		 
 	}
 }

@@ -63,7 +63,7 @@ namespace RealState.Application.Implements
 			{
 				throw new ArgumentNullException($" The username: {user.UserName} or password: {user.Password} is incorrect ");
 			}
-			
+
 			var valid = _passwordService.Check(exitsUser.Password, user.Password);
 			return valid ? exitsUser : null;
 		}

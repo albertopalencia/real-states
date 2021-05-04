@@ -57,6 +57,5 @@ namespace RealState.Api.Controllers
 			return Ok(result);
 		}
 
-
 	}
 }

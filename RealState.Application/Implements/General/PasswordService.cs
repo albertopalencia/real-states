@@ -35,15 +35,15 @@ namespace RealState.Application.Implements.General
 		/// <summary>
 		/// The options
 		/// </summary>
-		private readonly ContrasenaOpcion _contrasenaOpcion;
+		private readonly PasswordOption _passwordOption;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PasswordService" /> class.
 		/// </summary>
 		/// <param name="contrasenaOpcion">The options.</param>
-		public PasswordService(IOptions<ContrasenaOpcion> contrasenaOpcion)
+		public PasswordService(IOptions<PasswordOption> contrasenaOpcion)
 		{
-			_contrasenaOpcion = contrasenaOpcion.Value;
+			_passwordOption = contrasenaOpcion.Value;
 		}
 
 		/// <summary>
@@ -70,7 +70,7 @@ namespace RealState.Application.Implements.General
 				salt,
 				iterations
 				);
-			var keyToCheck = algorithm.GetBytes(_contrasenaOpcion.KeySize);
+			var keyToCheck = algorithm.GetBytes(_passwordOption.KeySize);
 			return keyToCheck.SequenceEqual(key);
 		}
 
@@ -83,13 +83,13 @@ namespace RealState.Application.Implements.General
 		{
 			using var algorithm = new Rfc2898DeriveBytes(
 				password,
-				_contrasenaOpcion.SaltSize,
-				_contrasenaOpcion.Iterations
+				_passwordOption.SaltSize,
+				_passwordOption.Iterations
 				);
-			var key = Convert.ToBase64String(algorithm.GetBytes(_contrasenaOpcion.KeySize));
+			var key = Convert.ToBase64String(algorithm.GetBytes(_passwordOption.KeySize));
 			var salt = Convert.ToBase64String(algorithm.Salt);
 
-			return $"{_contrasenaOpcion.Iterations}.{salt}.{key}";
+			return $"{_passwordOption.Iterations}.{salt}.{key}";
 		}
 	}
 }

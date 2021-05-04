@@ -55,7 +55,7 @@ namespace RealState.Domain.Entities
         /// Gets or sets the year.
         /// </summary>
         /// <value>The year.</value>
-        public int? Year { get; set; }
+        public int Year { get; set; }
         /// <summary>
         /// Gets or sets the identifier owner.
         /// </summary>

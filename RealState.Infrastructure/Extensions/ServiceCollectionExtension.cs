@@ -42,14 +42,15 @@ namespace RealState.Infrastructure.Extensions
 		public static IServiceCollection AddDbContexts(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddDbContext<RealStateContext>(options =>
-			 options.UseSqlServer(configuration[ConnectionDomainEnum.RealState.Name],
-			   sqlOptions =>
+				options.UseSqlServer(configuration[ConnectionDomainEnum.RealState.Name],
+				
+				 sqlOptions =>
 			   {
 				   sqlOptions.EnableRetryOnFailure(
 				   10,
 				   TimeSpan.FromSeconds(30),
 				   null);
-			   })
+			   }).EnableSensitiveDataLogging()
 		   );
 
 			return services;
@@ -63,8 +64,8 @@ namespace RealState.Infrastructure.Extensions
 		/// <returns>IServiceCollection.</returns>
 		public static IServiceCollection AddOptions(this IServiceCollection services, IConfiguration configuration)
 		{
-			services.Configure<PaginacionOpcion>(options => configuration.GetSection("PaginacionOpcion").Bind(options));
-			services.Configure<ContrasenaOpcion>(options => configuration.GetSection("ContrasenaOpcion").Bind(options));
+			services.Configure<PaginationOption>(options => configuration.GetSection("PaginationOption").Bind(options));
+			services.Configure<PasswordOption>(options => configuration.GetSection("PasswordOption").Bind(options));
 			return services;
 		}
 

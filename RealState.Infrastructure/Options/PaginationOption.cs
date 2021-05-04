@@ -6,7 +6,7 @@
 // Last Modified By : Alberto Palencia
 // Last Modified On : 02-09-2021
 // ***********************************************************************
-// <copyright file="PaginacionOpcion.cs" company="RealState.Infrastructure">
+// <copyright file="PaginationOption.cs" company="RealState.Infrastructure">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -17,10 +17,10 @@ namespace RealState.Infrastructure.Options
 	using System.Diagnostics.CodeAnalysis;
 
 	/// <summary>
-	/// Class PaginacionOpcion.
+	/// Class PaginationOption.
 	/// </summary>
 	[ExcludeFromCodeCoverage]
-	public class PaginacionOpcion
+	public class PaginationOption
 	{
 		/// <summary>
 		/// Gets or sets the default size of the page.

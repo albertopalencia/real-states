@@ -19,8 +19,4 @@
     <ProjectReference Include="..\RealState.Api\RealState.Api.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="V1\Controllers\" />
-  </ItemGroup>
-
 </Project>

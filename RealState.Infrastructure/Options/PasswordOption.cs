@@ -6,7 +6,7 @@
 // Last Modified By : Alberto Palencia
 // Last Modified On : 02-08-2021
 // ***********************************************************************
-// <copyright file="ContrasenaOpcion.cs" company="RealState.Infrastructure">
+// <copyright file="PasswordOption.cs" company="RealState.Infrastructure">
 //     Copyright (c) AlbertPalencia. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -17,10 +17,10 @@ namespace RealState.Infrastructure.Options
 	using System.Diagnostics.CodeAnalysis;
 
 	/// <summary>
-	/// Class ContrasenaOpcion.
+	/// Class PasswordOption.
 	/// </summary>
 	[ExcludeFromCodeCoverage]
-	public class ContrasenaOpcion
+	public class PasswordOption
 	{
 		/// <summary>
 		/// Gets or sets the size of the salt.

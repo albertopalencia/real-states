@@ -85,6 +85,7 @@ namespace RealState.Api
 			{
 				options.SuppressModelStateInvalidFilter = true;
 			});
+			
 
 			ConfigureServiceAdd(services);
 		}
@@ -119,6 +120,12 @@ namespace RealState.Api
 					"image/svg+xml"
 				});
 
+			});
+
+			services.AddHashids(options =>
+			{
+				options.Salt = Configuration["HasId"];
+				options.MinHashLength = 8;
 			});
 
 

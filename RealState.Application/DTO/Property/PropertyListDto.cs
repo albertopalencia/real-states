@@ -12,6 +12,8 @@
 // <summary></summary>
 // ***********************************************************************
 
+using RealState.Application.DTO.Owner;
+
 namespace RealState.Application.DTO.Property
 {
 	/// <summary>
@@ -55,6 +57,9 @@ namespace RealState.Application.DTO.Property
 		/// <value>The identifier owner.</value>
 		public int IdOwner { get; set; }
 
+
+		public OwnerDto OwnerDto { get; set; }
+
 		public static implicit operator PropertyListDto(Domain.Entities.Property property) =>
 		   new PropertyListDto
 		   {
@@ -62,7 +67,8 @@ namespace RealState.Application.DTO.Property
 			   Price = property.Price,
 			   CodeInternal = property.CodeInternal,
 			   Year = property.Year,
-			   Name = property.Name
+			   Name = property.Name,
+			   OwnerDto = property.IdOwnerNavigation
 		   };
 	}
 }
